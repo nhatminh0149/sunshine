@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/gioi-thieu', function () {
+    return "Hello <h1>Hello Minh </h1>Minh";
+});
+Route::get('/lien-he', function () {
+    return "Contact us";
+});
+
+Route::post('/gioi-thieu', function () {
+    return "Hello <h1>Hello</h1>";
+});
