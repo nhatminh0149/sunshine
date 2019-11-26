@@ -30,9 +30,9 @@ class CreateCuscKhuyenmaiTable extends Migration
             $table->timestamp('km_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->unsignedTinyInteger('km_trangThai')->default('2')->comment('Trạng thái: 1-khóa, 2: khả dụng');
 
-            $table->foreign('nv_nguoiLap')->references('nv_ma')->on('cusc_nhanvien')->onDelete('cascade')->onUpdate('cascade'); 
-            $table->foreign('nv_kyNhan')->references('nv_ma')->on('cusc_nhanvien')->onDelete('cascade')->onUpdate('cascade'); 
-            $table->foreign('nv_kyDuyet')->references('nv_ma')->on('cusc_nhanvien')->onDelete('cascade')->onUpdate('cascade'); 
+            //$table->foreign('nv_nguoiLap')->references('nv_ma')->on('cusc_nhanvien')->onDelete('cascade')->onUpdate('cascade'); 
+            //$table->foreign('nv_kyNhan')->references('nv_ma')->on('cusc_nhanvien')->onDelete('cascade')->onUpdate('cascade'); 
+            //$table->foreign('nv_kyDuyet')->references('nv_ma')->on('cusc_nhanvien')->onDelete('cascade')->onUpdate('cascade'); 
         });
     }
 
