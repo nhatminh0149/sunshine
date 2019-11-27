@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuscChudeTable extends Migration
+class CreateChudeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCuscChudeTable extends Migration
      */
     public function up()
     {
-        Schema::create('cusc_chude', function (Blueprint $table) {
+        Schema::create('chude', function (Blueprint $table) {
             $table->unsignedTinyInteger('cd_ma')->autoIncrement()->comment('Mã chủ đề');
             $table->string('cd_ten', 50)->unique()->comment('Tên chủ đề');
             $table->timestamp('cd_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -29,6 +29,6 @@ class CreateCuscChudeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cusc_chude');
+        Schema::dropIfExists('chude');
     }
 }

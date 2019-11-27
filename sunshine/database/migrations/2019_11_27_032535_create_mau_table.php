@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuscMauTable extends Migration
+class CreateMauTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreateCuscMauTable extends Migration
      */
     public function up()
     {
-        //Tạo bảng cusc_mau: Lưu info màu hoa
-        Schema::create('cusc_mau', function (Blueprint $table) {
+        Schema::create('mau', function (Blueprint $table) {
             $table->unsignedTinyInteger('m_ma')->autoIncrement()->comment('Mã màu hoa');            
             $table->string('m_ten', 50)->unique()->comment('Tên màu hoa');
             $table->timestamp('m_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm tạo mới');
@@ -30,6 +29,6 @@ class CreateCuscMauTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cusc_mau');
+        Schema::dropIfExists('mau');
     }
 }

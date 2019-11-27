@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuscNhanvienTable extends Migration
+class CreateNhanvienTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCuscNhanvienTable extends Migration
      */
     public function up()
     {
-        Schema::create('cusc_nhanvien', function (Blueprint $table) {
-            $table->unsignedTinyInteger('nv_ma')->autoIncrement()->comment('Mã nhân viên, 1-Chưa phân công');
+        Schema::create('nhanvien', function (Blueprint $table) {
+            $table->smallIncrements('nv_ma')->comment('Mã nhân viên, 1-chưa phân công');
             $table->string('nv_taiKhoan', 50)->unique()->comment('Tài khoản nv');
-            $table->string('nv_matKhau', 32)->comment('Mật khẩu nv');
+            $table->string('nv_matKhau', 256)->comment('Mật khẩu nv');
             $table->string('nv_hoTen', 100)->comment('Họ tên nv');
             $table->unsignedTinyInteger('nv_gioiTinh')->default('1')->comment('Giới tính');
             $table->string('nv_email', 100)->unique()->comment('Email nv');
@@ -26,9 +26,9 @@ class CreateCuscNhanvienTable extends Migration
             $table->timestamp('nv_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('nv_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->unsignedTinyInteger('nv_trangThai')->default('2')->comment('Trạng thái: 1-khóa, 2: khả dụng');
-            $table->unsignedTinyInteger('q_ma')->comment('Mã quyền');
+            $table->unsignedTinyInteger('q_ma')->comment('Mã quyền: 1-Giám đốc, 2-Quản trị, 3-Quản lý kho, 4-Kế toán, 5-Nhân viên bán hàng, 6-Nhân viên giao hàng');
 
-            $table->foreign('q_ma')->references('q_ma')->on('cusc_quyen')->onDelete('cascade')->onUpdate('cascade'); 
+            $table->foreign('q_ma')->references('q_ma')->on('quyen')->onDelete('cascade')->onUpdate('cascade'); 
         });
     }
 
@@ -39,6 +39,6 @@ class CreateCuscNhanvienTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cusc_nhanvien');
+        Schema::dropIfExists('nhanvien');
     }
 }

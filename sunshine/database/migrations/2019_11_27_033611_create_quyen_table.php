@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuscQuyenTable extends Migration
+class CreateQuyenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreateCuscQuyenTable extends Migration
      */
     public function up()
     {
-        //Tạo bảng cusc_quyen: Lưu info về vai trò của nhân viên trong cty như GD, quản trị, qly kho, kế toán, nv kinh doanh, nv giao hàng.
-        Schema::create('cusc_quyen', function (Blueprint $table) {
+        Schema::create('quyen', function (Blueprint $table) {
             $table->unsignedTinyInteger('q_ma')->autoIncrement()->comment('Mã quyền: 1-Giám đốc, 2-Quản trị, 3-Quản lý kho, 4-Kế toán, 5-Nv bán hàng, 6-Nv giao hàng');
             $table->string('q_ten', 30)->unique()->comment('Tên quyền');
             $table->string('q_dienGiai', 250)->nullable()->comment('Diễn giải về quyền');
@@ -31,6 +30,6 @@ class CreateCuscQuyenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cusc_quyen');
+        Schema::dropIfExists('quyen');
     }
 }

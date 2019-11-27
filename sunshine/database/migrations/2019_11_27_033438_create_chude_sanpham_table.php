@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCuscChudeSanphamTable extends Migration
+class CreateChudeSanphamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateCuscChudeSanphamTable extends Migration
      */
     public function up()
     {
-        //Tạo bảng cusc_chude_sanpham: Lưu mối liên hệ giữa sp và chủ đề
-        Schema::create('cusc_chude_sanpham', function (Blueprint $table) {
+        Schema::create('chude_sanpham', function (Blueprint $table) {
             $table->unsignedBigInteger('sp_ma')->comment('Mã sp');
             $table->unsignedTinyInteger('cd_ma')->comment('Mã chủ đề');
 
             $table->primary(['sp_ma', 'cd_ma']);
-            $table->foreign('sp_ma')->references('sp_ma')->on('cusc_sanpham')->onDelete('cascade')->onUpdate('cascade'); 
-            $table->foreign('cd_ma')->references('cd_ma')->on('cusc_chude')->onDelete('cascade')->onUpdate('cascade'); 
+            $table->foreign('sp_ma')->references('sp_ma')->on('sanpham')->onDelete('cascade')->onUpdate('cascade'); 
+            $table->foreign('cd_ma')->references('cd_ma')->on('chude')->onDelete('cascade')->onUpdate('cascade'); 
         });
     }
 
@@ -31,6 +30,6 @@ class CreateCuscChudeSanphamTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cusc_chude_sanpham');
+        Schema::dropIfExists('chude_sanpham');
     }
 }

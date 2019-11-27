@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatCuscLoaiTable extends Migration
+class CreateLoaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatCuscLoaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('cusc_loai', function(Blueprint $table){
+        Schema::create('loai', function (Blueprint $table) {
             $table->unsignedTinyInteger('l_ma')->autoIncrement()->comment('Mã loại sản phẩm'); //thêm cột l_ma kiểu số dương tinyint, khóa chính tự động tăng -> tạo chú thích cho cột là "Ma loai san pham"
             $table->string('l_ten', 50)->unique()->comment('Tên loại sản phẩm'); //thêm cột l_ten có kiểu varchar,độ dài tối đa là 50 -> chứa giá trị không trùng nhau-> tạo chú thích cho cột
             $table->timestamp('l_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Tgian tạo mới loại sản phẩm');//thêm cột l_ngaytaoMoi, gtri mặc định "current_timestamp"
@@ -29,6 +29,6 @@ class CreatCuscLoaiTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cusc_loai');
+        Schema::dropIfExists('loai');
     }
 }
