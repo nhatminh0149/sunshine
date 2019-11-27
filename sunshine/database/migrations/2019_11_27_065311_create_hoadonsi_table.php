@@ -22,7 +22,7 @@ class CreateHoadonsiTable extends Migration
             $table->string('hds_soTaiKhoan', 20)->nullable()->default(NULL);
             $table->unsignedSmallInteger('nv_lapHoaDon');
             $table->dateTime('hds_ngayXuatHoaDon')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->unsignedSmallInteger('hds_thuTruong')->default('1')->comment('Mã nhân viên (thủ trưởng), 1-chưa phân công');
+            $table->unsignedSmallInteger('nv_thuTruong')->default('1')->comment('Mã nhân viên (thủ trưởng), 1-chưa phân công');
             $table->timestamp('hds_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm tạo mới');
             $table->timestamp('hds_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm cập nhật');
             $table->unsignedTinyInteger('hds_trangThai')->default('1')->comment('Trạng thái hóa đơn: 1-lập hóa đơn, 2-xuất hóa đơn, 3-hủy');
@@ -30,7 +30,7 @@ class CreateHoadonsiTable extends Migration
             $table->unsignedTinyInteger('tt_ma');
 
             $table->foreign('nv_lapHoaDon')->references('nv_ma')->on('nhanvien')->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreign('hds_thuTruong')->references('nv_ma')->on('nhanvien')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('nv_thuTruong')->references('nv_ma')->on('nhanvien')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('dh_ma')->references('dh_ma')->on('donhang')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('tt_ma')->references('tt_ma')->on('thanhtoan')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
