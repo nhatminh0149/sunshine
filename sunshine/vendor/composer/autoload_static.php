@@ -3652,7 +3652,7 @@ class ComposerStaticInit874528e2357c0c48f653a91925181a70
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
-        'ThanhtoanTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ThanhtoanTableSeeder.php',
+        'ThanhtoanSeeder' => __DIR__ . '/../..' . '/database/seeds/ThanhtoanSeeder.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',

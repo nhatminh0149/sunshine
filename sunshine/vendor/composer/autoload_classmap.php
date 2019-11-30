@@ -3317,7 +3317,7 @@ return array(
     'Tests\\TestCase' => $baseDir . '/tests/TestCase.php',
     'Tests\\Unit\\ExampleTest' => $baseDir . '/tests/Unit/ExampleTest.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
-    'ThanhtoanTableSeeder' => $baseDir . '/database/seeds/ThanhtoanTableSeeder.php',
+    'ThanhtoanSeeder' => $baseDir . '/database/seeds/ThanhtoanSeeder.php',
     'TheSeer\\Tokenizer\\Exception' => $vendorDir . '/theseer/tokenizer/src/Exception.php',
     'TheSeer\\Tokenizer\\NamespaceUri' => $vendorDir . '/theseer/tokenizer/src/NamespaceUri.php',
     'TheSeer\\Tokenizer\\NamespaceUriException' => $vendorDir . '/theseer/tokenizer/src/NamespaceUriException.php',
