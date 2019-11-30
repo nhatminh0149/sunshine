@@ -25,3 +25,12 @@ Route::get('/lien-he', function () {
 Route::post('/gioi-thieu', function () {
     return "Hello <h1>Hello</h1>";
 });
+
+// route Hiển thị màn hình hello
+Route::get('/hello', 'ExampleController@hello')->name('hello');
+
+// route Hiển thị màn hình gioithieubanthan
+Route::get('/gioithieubanthan', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
+
+// route Hiển thị màn hình gioithieubantha
+Route::get('/hoctap/php', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
