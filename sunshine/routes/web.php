@@ -32,5 +32,5 @@ Route::get('/hello', 'ExampleController@hello')->name('hello');
 // route Hiển thị màn hình gioithieubanthan
 Route::get('/gioithieubanthan', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
 
-// route Hiển thị màn hình gioithieubantha
-Route::get('/hoctap/php', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
+// route Hiển thị màn hình hoctap/php
+Route::get('/hoctap/php', 'ExampleController@php')->name('hoctap/php');

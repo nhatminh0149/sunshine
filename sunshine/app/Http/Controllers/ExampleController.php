@@ -14,10 +14,10 @@ class ExampleController extends Controller
         // - Mặc định thư mục gốc là `resources/views`
         // - Từ thư mục gốc, việc phân cách thư mục sẽ sử dụng dấu .
         // - Tên view không cần khai báo đuôi file (extension) `blade.php`
-        
+        //<script>alert("Hello JS");</script> 
         // => view được gọi hiển thị sẽ nằm trong thư mục `resources/views/example/hello.blade.php'
         $dataLoai = Loai::all();
-        $hoten = '<script>alert("Hello JS");</script> Nhật Minh';
+        $hoten = 'Nhật Minh';
         
         $isAdmin = false;
 
@@ -30,6 +30,11 @@ class ExampleController extends Controller
     public function gioithieubanthan()
     {
         return view('pages.gioithieubanthan');
+        
+    }
+    public function php()
+    {
+        return view('pages.hoctap.php');
         
     }
 }
