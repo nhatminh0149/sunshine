@@ -33,4 +33,10 @@ Route::get('/hello', 'ExampleController@hello')->name('hello');
 Route::get('/gioithieubanthan', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
 
 // route Hiển thị màn hình hoctap/php
-Route::get('/hoctap/php', 'ExampleController@php')->name('hoctap/php');
+Route::get('/pages/hoctap/php', 'ExampleController@php')->name('hoctap/php');
+
+// route Danh mục Sản phẩm
+Route::resource('/admin/danhsachsanpham', 'SanPhamController');
+
+// route Danh mục Sản phẩm
+//Route::resource('/sanpham', 'SanPhamController');
