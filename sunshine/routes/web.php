@@ -26,17 +26,21 @@ Route::post('/gioi-thieu', function () {
     return "Hello <h1>Hello</h1>";
 });
 
-// route Hiển thị màn hình hello
-Route::get('/hello', 'ExampleController@hello')->name('hello');
+// // route Hiển thị màn hình hello
+// Route::get('/hello', 'ExampleController@hello')->name('hello');
 
-// route Hiển thị màn hình gioithieubanthan
-Route::get('/gioithieubanthan', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
+// // route Hiển thị màn hình gioithieubanthan
+// Route::get('/gioithieubanthan', 'ExampleController@gioithieubanthan')->name('gioithieubanthan');
 
-// route Hiển thị màn hình hoctap/php
-Route::get('/pages/hoctap/php', 'ExampleController@php')->name('hoctap/php');
+// // route Hiển thị màn hình hoctap/php
+// Route::get('/pages/hoctap/php', 'ExampleController@php')->name('hoctap/php');
 
 // route Danh mục Sản phẩm
+//tạo route xuất Biểu mẫu và In ấn Danh mục sản phẩm
+Route::get('/admin/danhsachsanpham/print', 'SanPhamController@print')->name('danhsachsanpham.print');
+Route::get('/admin/danhsachsanpham/excel', 'SanPhamController@excel')->name('danhsachsanpham.excel');
 Route::resource('/admin/danhsachsanpham', 'SanPhamController');
 
 // route Danh mục Sản phẩm
 //Route::resource('/sanpham', 'SanPhamController');
+

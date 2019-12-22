@@ -10,6 +10,23 @@ Danh sách sản phẩm
 - Div này chỉ hiển thị khi trong Session có các key `alert-*` từ Controller trả về. 
 - Sử dụng các class của Bootstrap "danger", "warning", "success", "info" để hiển thị màu cho đúng với trạng thái kết quả.
 -->
+
+       <!-- Tạo nút xem biểu mẫu khi in trên web
+    - Theo quy ước, các route đã được đăng ký trong file `web.php` đều phải được đặt tên để dễ dàng bảo trì code sau này.
+    - Đường dẫn URL là đường dẫn được tạo ra bằng route có tên `sanpham.print`
+    - Sẽ có dạng http://tenmiencuaban.com/admin/sanpham/print
+    -->
+    <br>
+    <a href="{{ route('danhsachsanpham.print') }}" class="btn btn-warning">In ấn</a>
+    <!-- Tạo nút Xuất Excel danh sách sản phẩm
+- Theo quy ước, các route đã được đăng ký trong file `web.php` đều phải được đặt tên để dễ dàng bảo trì code sau này.
+- Đường dẫn URL là đường dẫn được tạo ra bằng route có tên `danhsachsanpham.excel`
+- Sẽ có dạng http://tenmiencuaban.com/admin/danhsachsanpham/excel
+-->
+    <a href="{{ route('danhsachsanpham.excel') }}" class="btn btn-success">Xuất Excel</a>
+    
+<br><br>
+
 <div class="flash-message">
     @foreach (['danger', 'warning', 'success', 'info'] as $msg)
       @if(Session::has('alert-' . $msg))
