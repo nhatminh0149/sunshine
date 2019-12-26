@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Auth\\CustomUserProvider' => $baseDir . '/app/Http/Controllers/Auth/CustomUserProvider.php',
     'App\\Chitietdonhang' => $baseDir . '/app/Chitietdonhang.php',
     'App\\Chitietnhap' => $baseDir . '/app/Chitietnhap.php',
     'App\\ChuDe' => $baseDir . '/app/Chude.php',
@@ -13,6 +14,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Donhang' => $baseDir . '/app/Donhang.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Exports\\SanPhamExport' => $baseDir . '/app/Exports/SanPhamExport.php',
     'App\\Gopy' => $baseDir . '/app/Gopy.php',
     'App\\Hinhanh' => $baseDir . '/app/Hinhanh.php',
     'App\\Hoadonle' => $baseDir . '/app/Hoadonle.php',
@@ -25,6 +27,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ExampleController' => $baseDir . '/app/Http/Controllers/ExampleController.php',
     'App\\Http\\Controllers\\HinhanhController' => $baseDir . '/app/Http/Controllers/HinhanhController.php',
+    'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\LoaiController' => $baseDir . '/app/Http/Controllers/LoaiController.php',
     'App\\Http\\Controllers\\SanPhamController' => $baseDir . '/app/Http/Controllers/SanPhamController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

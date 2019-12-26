@@ -39,6 +39,7 @@ class SanPhamExport implements FromView, WithDrawings, WithEvents, ShouldAutoSiz
         $drawingLogo->setHeight(90);
         $drawingLogo->setCoordinates('C4');
         $offsetX = 40; //pixels
+        $offsetY = 10; //pixels
         $drawingLogo->setOffsetX($offsetX); //pixels
         $arrDrawings[] = $drawingLogo;
         // Dòng bắt đầu xuất Excel danh sách sản phẩm

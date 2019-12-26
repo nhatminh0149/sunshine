@@ -44,3 +44,7 @@ Route::resource('/admin/danhsachsanpham', 'SanPhamController');
 // route Danh mục Sản phẩm
 //Route::resource('/sanpham', 'SanPhamController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

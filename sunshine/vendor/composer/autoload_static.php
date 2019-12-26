@@ -428,6 +428,7 @@ class ComposerStaticInit874528e2357c0c48f653a91925181a70
     );
 
     public static $classMap = array (
+        'App\\Auth\\CustomUserProvider' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/CustomUserProvider.php',
         'App\\Chitietdonhang' => __DIR__ . '/../..' . '/app/Chitietdonhang.php',
         'App\\Chitietnhap' => __DIR__ . '/../..' . '/app/Chitietnhap.php',
         'App\\ChuDe' => __DIR__ . '/../..' . '/app/Chude.php',
@@ -435,6 +436,7 @@ class ComposerStaticInit874528e2357c0c48f653a91925181a70
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Donhang' => __DIR__ . '/../..' . '/app/Donhang.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Exports\\SanPhamExport' => __DIR__ . '/../..' . '/app/Exports/SanPhamExport.php',
         'App\\Gopy' => __DIR__ . '/../..' . '/app/Gopy.php',
         'App\\Hinhanh' => __DIR__ . '/../..' . '/app/Hinhanh.php',
         'App\\Hoadonle' => __DIR__ . '/../..' . '/app/Hoadonle.php',
@@ -447,6 +449,7 @@ class ComposerStaticInit874528e2357c0c48f653a91925181a70
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ExampleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExampleController.php',
         'App\\Http\\Controllers\\HinhanhController' => __DIR__ . '/../..' . '/app/Http/Controllers/HinhanhController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LoaiController' => __DIR__ . '/../..' . '/app/Http/Controllers/LoaiController.php',
         'App\\Http\\Controllers\\SanPhamController' => __DIR__ . '/../..' . '/app/Http/Controllers/SanPhamController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

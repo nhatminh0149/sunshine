@@ -64,12 +64,29 @@ return [
     |
     */
 
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
-        ],
+    //'providers' => [
+       // 'users' => [
+           // 'driver' => 'eloquent',
+           // 'model' => App\User::class,
+       // ],
 
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+    //],
+
+    'providers' => [
+        // Không sử dụng model `User` (mặc định của Laravel)
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\User::class,
+        // ],
+        // Thay thế việc Xác thực tài khoản bằng model `Nhanvien`
+        'users' => [
+            'driver' => 'custom',
+            'model' => App\Nhanvien::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
