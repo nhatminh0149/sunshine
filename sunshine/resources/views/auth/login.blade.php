@@ -1,69 +1,65 @@
-@extends('layouts.app')
+@extends('backend.layouts.master-fullpage') //kế thua tu trang nay
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('nv_taiKhoan') ? ' has-error' : '' }}">
-                            <label for="nv_taiKhoan" class="col-md-4 control-label">Tên tài khoản</label>
-
-                            <div class="col-md-6">
-                                <input id="nv_taiKhoan" type="text" class="form-control" name="nv_taiKhoan" value="{{ old('nv_taiKhoan') }}" required autofocus>
-
-                                @if ($errors->has('nv_taiKhoan'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nv_taiKhoan') }}</strong>
+@section('content') //them vao lo content cua trang master-fullpage
+<br><br><br>
+<form name="frmdangnhap" id="frmdangnhap" method="post" action="{{ route('login') }}">
+    {{ csrf_field() }} 
+    <div class="container mt-4">
+                <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-group">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <h1>Đăng nhập</h1>
+                            <p class="text-muted">Nhập thông tin Tài khoản</p>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-user"></i>
                                     </span>
-                                @endif
+                                </div>
+                                <input class="form-control" type="text" name="nv_taiKhoan" placeholder="Tên đăng nhập">
                             </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('nv_matKhau') ? ' has-error' : '' }}">
-                            <label for="nv_matKhau" class="col-md-4 control-label">Mật khẩu</label>
-
-                            <div class="col-md-6">
-                                <input id="nv_matKhau" type="password" class="form-control" name="nv_matKhau" required>
-
-                                @if ($errors->has('nv_matKhau'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nv_matKhau') }}</strong>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-lock"></i>
                                     </span>
-                                @endif
+                                </div>
+                                <input class="form-control" type="password" name="nv_matKhau" placeholder="Mật khẩu">
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="nv_ghinhodangnhap" {{ old('nv_ghinhodangnhap') ? 'checked' : '' }}> Ghi nhớ đăng nhập
-                                    </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input">
+                                    </div>
+                                
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class="btn btn-primary px-4" name="btnDangNhap">Đăng nhập</button>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <!-- <button class="btn btn-link px-0" type="button">Quên mật khẩu?</button> -->
+                                    <a class="btn btn-link px-0" href="{{ route('password.request') }}">Quên mật khẩu?</a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Đăng nhập
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Quên mật khẩu?
-                                </a>
+                    </div>
+                    <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                        <div class="card-body text-center">
+                            <div>
+                                <h2>Đăng ký</h2>
+                                <p>Đăng ký để làm thành viên của Trang web bán hàng. Bạn sẽ được một số quyền lợi nhất
+                                    định khi làm thành viên của Chúng tôi.</p>
+                                <a class="btn btn-primary active mt-3" href="{{ route('register') }}">Đăng
+                                    ký ngay!</a>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+</form>

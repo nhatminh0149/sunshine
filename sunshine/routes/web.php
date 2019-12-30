@@ -41,10 +41,11 @@ Route::get('/admin/danhsachsanpham/print', 'SanPhamController@print')->name('dan
 Route::get('/admin/danhsachsanpham/excel', 'SanPhamController@excel')->name('danhsachsanpham.excel');
 Route::resource('/admin/danhsachsanpham', 'SanPhamController');
 
-// route Danh mục Sản phẩm
-//Route::resource('/sanpham', 'SanPhamController');
-
+// route Danh mục CHỦ ĐỀ
+Route::resource('/admin/danhsachchude', 'ChuDeController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/admin/activate/{nv_ma}', 'Backend\BackendController@activate')->name('activate');
+

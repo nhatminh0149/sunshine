@@ -1,5 +1,5 @@
 {{-- View này sẽ kế thừa giao diện từ `backend.layouts.index` --}}
-@extends('backend.layouts.master')
+@extends('backend.layouts.master-fullpage')
 {{-- Thay thế nội dung vào Placeholder `title` của view `backend.layouts.index` --}}
 @section('title')
 Danh sách sản phẩm
@@ -40,6 +40,7 @@ Danh sách sản phẩm
 - Sẽ có dạng http://tenmiencuaban.com/admin/danhsachsanpham/create
 -->
 <a href="{{ route('danhsachsanpham.create') }}" class="btn btn-primary">Thêm mới sản phẩm</a>
+<br><br>
 <!-- Tạo table hiển thị danh sách các sản phẩm -->
 <table class="table table-bordered">
     <thead>

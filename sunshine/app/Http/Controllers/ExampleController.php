@@ -27,14 +27,4 @@ class ExampleController extends Controller
             ->with('dataLoai',$dataLoai);
         
     }
-    public function gioithieubanthan()
-    {
-        return view('pages.gioithieubanthan');
-        
-    }
-    public function php()
-    {
-        return view('pages.hoctap.php');
-        
-    }
 }
