@@ -49,3 +49,25 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/admin/activate/{nv_ma}', 'Backend\BackendController@activate')->name('activate');
 
+// Thực hiện tạo giao diện trang chủ Frontend
+Route::get('/', 'Frontend\FrontendController@index')->name('frontend.home');
+
+//Thực hiện tạo giao diện trang Giới thiệu (about)
+Route::get('/gioi-thieu', 'Frontend\FrontendController@about')->name('frontend.about');
+
+//Thực hiện tạo giao diện trang Liên hệ (contact)
+Route::get('/lien-he', 'Frontend\FrontendController@contact')->name('frontend.contact');
+
+// tạo route sendMailContactForm
+Route::post('/lien-he/goi-loi-nhan', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMailContactForm');
+
+//Tạo trang danh sách Sản phẩm (product)
+Route::get('/san-pham', 'Frontend\FrontendController@product')->name('frontend.product');
+
+//Tạo route cho phép chuyển đổi ngôn ngữ
+Route::get('setLocale/{locale}', function ($locale) {
+    if (in_array($locale, Config::get('app.locales'))) {
+      Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('app.setLocale');
