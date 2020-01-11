@@ -64,6 +64,17 @@ Route::post('/lien-he/goi-loi-nhan', 'Frontend\FrontendController@sendMailContac
 //Tạo trang danh sách Sản phẩm (product)
 Route::get('/san-pham', 'Frontend\FrontendController@product')->name('frontend.product');
 
+//Tạo trang Chi tiết Sản phẩm (product-detail)
+Route::get('/san-pham/{id}', 'FrontendController@productDetail')->name('frontend.productDetail');
+
+//Tạo trang thanh toán (checkout)
+Route::get('/gio-hang', 'Frontend\FrontendController@cart')->name('frontend.cart');
+
+//Tạo đơn hàng và gởi mail xác nhận
+Route::get('/gio-hang', 'Frontend\FrontendController@cart')->name('frontend.cart');
+Route::post('/dat-hang', 'Frontend\FrontendController@order')->name('frontend.order');
+Route::get('/dat-hang/hoan-tat', 'Frontend\FrontendController@orderFinish')->name('frontend.orderFinish');
+
 //Tạo route cho phép chuyển đổi ngôn ngữ
 Route::get('setLocale/{locale}', function ($locale) {
     if (in_array($locale, Config::get('app.locales'))) {
